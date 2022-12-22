@@ -1,3 +1,6 @@
+body {
+  overflow: hidden;
+}
 .card {
   position: absolute;
   display: flex;
@@ -6,10 +9,11 @@
   left: 50vw;
   transform: translate(-50%, -48%) scale(0.3);
   transform-style: preserve-3d;
+  transform-origin: center;
   perspective: 2000px;
 
   @media screen and (max-width: 768px) {
-    transform: translate(-42%, -48%) scale(0.3);
+    transform: scale(0.14);
   }
 
   .upper {
@@ -29,37 +33,37 @@
     .sun {
       top: 50%;
       right: 0;
-      transform: translate3d(0, -50%, 24px);
+      transform: translate3d(0, -50%, 120px);
     }
 
     .celebration {
       top: 50%;
       left: 50%;
-      transform: translate3d(-50%, -50%, 16px);
+      transform: translate3d(-50%, -50%, 80px);
     }
 
     .rabbit {
       top: calc(50% - 178px);
       left: 50%;
-      transform: translate3d(-50%, -50%, 12px);
+      transform: translate3d(-50%, -50%, 60px);
     }
 
     .mountain1 {
       bottom: 0;
       right: 0;
-      transform: translateZ(36px)
+      transform: translateZ(180px)
     }
 
     .mountain2 {
       bottom: 0;
       left: 50%;
-      transform: translateX(-50%) translateZ(24px);
+      transform: translateX(-50%) translateZ(120px);
     }
 
     .rock {
       bottom: 0;
       left: 0;
-      transform: translateZ(18px);
+      transform: translateZ(90px);
     }
   }
 
