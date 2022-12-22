@@ -1,0 +1,67 @@
+.card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 51vh;
+  left: 50vw;
+  transform: translate(-50%, -50%) scale(0.3);
+  transform-style: preserve-3d;
+  perspective: 800px;
+
+  .upper {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    transform-style: preserve-3d;
+    transform: rotateX(-5deg);
+    transform-origin: bottom center;
+    background: var(--bg-white);
+
+    .rabbit, .mountain1, .mountain2, .sun, .rock, .celebration {
+      position: absolute;
+      user-select: none;
+    }
+
+    .celebration {
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 16px);
+    }
+
+    .rabbit {
+      top: calc(50% - 178px);
+      left: 50%;
+      transform: translate3d(-50%, -50%, 12px);
+    }
+
+    .mountain1 {
+      bottom: 0;
+      right: 0;
+      transform: translateZ(36px)
+    }
+
+    .mountain2 {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) translateZ(24px);
+    }
+
+    .rock {
+      bottom: 0;
+      left: 0;
+      transform: translateZ(18px);
+    }
+  }
+
+  .down {
+    position: relative;
+    top: 50%;
+    left: 0;
+    width: 1440px;
+    height: 1024px;
+    transform-origin: top center;
+    transform-style: preserve-3d;
+    transform: rotateX(70deg);
+    background: var(--bg-white);
+  }
+}
