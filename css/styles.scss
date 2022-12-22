@@ -8,6 +8,10 @@
   transform-style: preserve-3d;
   perspective: 2000px;
 
+  @media screen and (max-width: 768px) {
+    transform: translate(-42%, -48%) scale(0.3);
+  }
+
   .upper {
     position: relative;
     width: 1440px;
