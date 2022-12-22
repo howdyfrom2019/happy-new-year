@@ -1,9 +1,9 @@
-const celebration = new Image().src = "../happy-new-year/assets/celebration.png";
-const mountain1 = new Image().src = "../happy-new-year/assets/mountain1.png";
-const mountain2 = new Image().src = "../happy-new-year/assets/mountain2.png";
-const rabbit = new Image().src = "../happy-new-year/assets/rabbit.png";
-const rock = new Image().src = "../happy-new-year/assets/rock.png";
-const sun = new Image().src = "../happy-new-year/assets/sun.png";
+const celebration = new Image().src = "../assets/celebration.png";
+const mountain1 = new Image().src = "../assets/mountain1.png";
+const mountain2 = new Image().src = "../assets/mountain2.png";
+const rabbit = new Image().src = "../assets/rabbit.png";
+const rock = new Image().src = "../assets/rock.png";
+const sun = new Image().src = "../assets/sun.png";
 
 export default function UpperCard({ $app, initialState, onClick }) {
   this.state = initialState;
