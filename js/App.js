@@ -1,4 +1,5 @@
 import UpperCard from "./UpperCard.js";
+import DownCard from "./DownCard.js";
 
 export default function App($app) {
   this.$card =  document.createElement("div");
@@ -16,6 +17,14 @@ export default function App($app) {
       console.log(e);
     }
   });
+
+  const downCard = new DownCard({
+    $app: this.$card,
+    undefined,
+    onClick: (e) => {
+      console.log(e);
+    }
+  })
 
   this.render = () => {
     $app.innerHTML = this.$card;

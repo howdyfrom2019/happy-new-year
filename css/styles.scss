@@ -4,9 +4,9 @@
   flex-direction: column;
   top: 51vh;
   left: 50vw;
-  transform: translate(-50%, -50%) scale(0.3);
+  transform: translate(-50%, -48%) scale(0.3);
   transform-style: preserve-3d;
-  perspective: 800px;
+  perspective: 2000px;
 
   .upper {
     position: relative;
@@ -20,6 +20,12 @@
     .rabbit, .mountain1, .mountain2, .sun, .rock, .celebration {
       position: absolute;
       user-select: none;
+    }
+
+    .sun {
+      top: 50%;
+      right: 0;
+      transform: translate3d(0, -50%, 24px);
     }
 
     .celebration {
@@ -61,7 +67,22 @@
     height: 1024px;
     transform-origin: top center;
     transform-style: preserve-3d;
-    transform: rotateX(70deg);
+    transform: rotateX(60deg);
     background: var(--bg-white);
+    padding: 120px 90px;
+    display: flex;
+    flex-direction: column;
+
+    .msg {
+      width: 100%;
+      border-bottom: 1px solid var(--dark_green);
+      padding: 16px 0;
+    }
+
+    .from {
+      width: 100%;
+      padding: 16px 0;
+      text-align: end;
+    }
   }
 }

@@ -4,9 +4,9 @@
   flex-direction: column;
   top: 51vh;
   left: 50vw;
-  transform: translate(-50%, -50%) scale(0.3);
+  transform: translate(-50%, -48%) scale(0.3);
   transform-style: preserve-3d;
-  perspective: 800px;
+  perspective: 2000px;
 }
 .card .upper {
   position: relative;
@@ -20,6 +20,11 @@
 .card .upper .rabbit, .card .upper .mountain1, .card .upper .mountain2, .card .upper .sun, .card .upper .rock, .card .upper .celebration {
   position: absolute;
   user-select: none;
+}
+.card .upper .sun {
+  top: 50%;
+  right: 0;
+  transform: translate3d(0, -50%, 24px);
 }
 .card .upper .celebration {
   top: 50%;
@@ -54,8 +59,21 @@
   height: 1024px;
   transform-origin: top center;
   transform-style: preserve-3d;
-  transform: rotateX(70deg);
+  transform: rotateX(60deg);
   background: var(--bg-white);
+  padding: 120px 90px;
+  display: flex;
+  flex-direction: column;
+}
+.card .down .msg {
+  width: 100%;
+  border-bottom: 1px solid var(--dark_green);
+  padding: 16px 0;
+}
+.card .down .from {
+  width: 100%;
+  padding: 16px 0;
+  text-align: end;
 }
 
 /*# sourceMappingURL=styles.css.map */
