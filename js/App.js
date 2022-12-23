@@ -1,5 +1,6 @@
 import UpperCard from "./UpperCard.js";
 import DownCard from "./DownCard.js";
+import Snow from "./Snow.js";
 
 export default function App($app) {
   this.$card =  document.createElement("div");
@@ -26,6 +27,11 @@ export default function App($app) {
     onClick: (e) => {
       console.log(e);
     }
+  });
+
+  const snow = new Snow({
+    $target: $app,
+    initialState: 20
   });
 
   this.mouseInteractive = () => {
