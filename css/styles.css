@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  background-color: var(--dark_green);
 }
 body #app {
   width: 100vw;
@@ -19,7 +20,7 @@ body #app {
 }
 @media screen and (max-width: 768px) {
   .card {
-    transform: scale(0.14);
+    transform: translate(-50%, -48%) scale(0.14);
   }
 }
 .card .upper {
