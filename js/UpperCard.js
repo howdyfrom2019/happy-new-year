@@ -18,7 +18,9 @@ export default function UpperCard({ $app, initialState, onClick }) {
   }
 
   this.render = () => {
+    this.$target.style.animationName = this.state ? "open" : "close";
     this.$target.innerHTML = `
+      <span class="font-roboto cover">2023년 연하장 To 당신!</span>
       <img class="sun" src=${sun} alt="sun" />
       <img class="mountain1" src=${mountain1} alt="mountain1" />
       <img class="mountain2" src=${mountain2} alt="mountain2" />
