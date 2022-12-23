@@ -29,13 +29,22 @@ body #app {
   width: 1440px;
   height: 1024px;
   transform-style: preserve-3d;
-  transform: rotateX(-5deg);
+  transform: rotateX(-107deg);
   transform-origin: bottom center;
   background: var(--bg-white);
+  animation-delay: 300ms;
+  animation-duration: 1.4s;
+  animation-fill-mode: both;
 }
-.card .upper .rabbit, .card .upper .mountain1, .card .upper .mountain2, .card .upper .sun, .card .upper .rock, .card .upper .celebration {
+.card .upper .rabbit, .card .upper .mountain1, .card .upper .mountain2, .card .upper .sun, .card .upper .rock, .card .upper .celebration, .card .upper .cover {
   position: absolute;
   user-select: none;
+}
+.card .upper .cover {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, -2px) rotateX(180deg);
+  font-size: 48px;
 }
 .card .upper .sun {
   top: 50%;
@@ -318,6 +327,22 @@ body #app {
   animation-delay: 10s, 1.5s;
 }
 
+@keyframes open {
+  0% {
+    transform: rotateX(-107deg);
+  }
+  100% {
+    transform: rotateX(-5deg);
+  }
+}
+@keyframes close {
+  0% {
+    transform: rotateX(-5deg);
+  }
+  100% {
+    transform: rotateX(-107deg);
+  }
+}
 @keyframes snow-fall {
   0% {
     top: -10%;

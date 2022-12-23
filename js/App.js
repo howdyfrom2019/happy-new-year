@@ -7,7 +7,7 @@ export default function App($app) {
   this.mouseX = 0;
   this.mouseY = 0;
   this.state = {
-
+    isEnvelopOpened: false,
   }
 
   this.$card.classList.add("card");
@@ -15,9 +15,9 @@ export default function App($app) {
 
   const upperCard = new UpperCard({
     $app: this.$card,
-    undefined,
-    onClick: (e) => {
-      console.log(e);
+    initialState: false,
+    onClick: () => {
+      this.setState({...this.state, isEnvelopOpened: !this.state.isEnvelopOpened});
     }
   });
 
@@ -44,6 +44,11 @@ export default function App($app) {
 
   this.rotateCard = () => {
     this.$card.style.transform = `translate(-50%, -48%) rotateZ(${(this.mouseX + this.mouseY) / 100}deg) rotateY(${this.mouseX / 100}deg) rotateX(${-this.mouseY / 100}deg) ${window.innerWidth < 768 ? 'scale(0.14)' : 'scale(0.3)'}`;
+  }
+
+  this.setState = (nextState) => {
+    this.state = nextState;
+    upperCard.setState(this.state.isEnvelopOpened);
   }
 
   this.mouseInteractive();
