@@ -25,7 +25,7 @@ export default function App($app) {
     $app: this.$card,
     undefined,
     onClick: (e) => {
-      console.log(e);
+      this.sendMessages("hi it's test~");
     }
   });
 
@@ -49,6 +49,10 @@ export default function App($app) {
   this.setState = (nextState) => {
     this.state = nextState;
     upperCard.setState(this.state.isEnvelopOpened);
+  }
+
+  this.sendMessages = (text) => {
+    downCard.sendMessages(text);
   }
 
   this.mouseInteractive();

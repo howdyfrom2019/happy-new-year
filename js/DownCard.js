@@ -25,5 +25,26 @@ export default function DownCard({ $app, initialState, onClick }) {
     `;
   }
 
+  this.sendMessages = async (text) => {
+    try {
+      const data = await (await fetch("http://localhost:3000/msgs", {
+        method: "POST",
+        credentials: "same-origin",
+        mode: 'cors',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          msgs: text
+        })
+      })).json();
+
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  this.$target.addEventListener("click", this.onClick, false);
   this.render();
 }
