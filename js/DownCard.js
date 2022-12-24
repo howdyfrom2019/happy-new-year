@@ -15,7 +15,7 @@ export default function DownCard({ $app, initialState, onClick }) {
       <span class="font-roboto msg">벌써 새해가 되었네요.</span>
       <span class="font-roboto msg">다들 잘 살고 있는지 궁금합니다. 저는 드디어 대학교를 졸업한답니다! :)</span>
       <span class="font-roboto msg">2023년은 모두에게 특별하고 의미있는 한 해가 되었으면 합니다.</span>
-      <span class="font-roboto msg">저에게 2023년은 새로운 출발의 해가 될 것 같네요. 모두의 1년을 응원합니다.</span>
+      <span class="font-roboto msg">제게 2023년은 새로운 출발의 해가 될 것 같네요. 모두의 1년을 응원합니다.</span>
       <span class="font-roboto from">성주 드림</span>
       <span class="font-roboto msg" style="margin-top: 120px">Happy new year for my foreign friends!</span>
       <span class="font-roboto msg">How have u been guys? I’m finally gonna get the undergraduate degree!</span>

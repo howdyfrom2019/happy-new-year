@@ -25,7 +25,7 @@ export default function App($app) {
     $app: this.$card,
     undefined,
     onClick: (e) => {
-      this.sendMessages("hi it's test~");
+      // this.sendMessages("hi it's test~");
     }
   });
 
