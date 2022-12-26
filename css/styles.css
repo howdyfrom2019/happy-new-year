@@ -16,7 +16,7 @@ body #app {
   transform: translate(-50%, -48%) scale(0.3);
   transform-style: preserve-3d;
   transform-origin: center;
-  perspective: 3200px;
+  perspective: 3600px;
   z-index: 2;
 }
 @media screen and (max-width: 768px) {
@@ -91,9 +91,10 @@ body #app {
   flex-direction: column;
 }
 .card .down .msg {
+  display: inline-block;
   width: 100%;
-  border-bottom: 1px solid var(--dark_green);
   padding: 16px 0;
+  transform: translateZ(1px);
 }
 .card .down .from {
   width: 100%;

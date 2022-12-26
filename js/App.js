@@ -1,11 +1,15 @@
 import UpperCard from "./UpperCard.js";
 import DownCard from "./DownCard.js";
 import Snow from "./Snow.js";
+import checkMobile from "./checkMobile.js";
+import checkIOS from "./checkIOS.js";
 
 export default function App($app) {
   this.$card =  document.createElement("div");
   this.mouseX = 0;
   this.mouseY = 0;
+  this.cardX = 0;
+  this.cardY = 0;
   this.state = {
     isEnvelopOpened: false,
   }
@@ -35,15 +39,42 @@ export default function App($app) {
   });
 
   this.mouseInteractive = () => {
-    window.addEventListener("mousemove", (e) => {
-      this.mouseX = e.clientX - (window.innerWidth / 2);
-      this.mouseY = e.clientY - (window.innerHeight / 2);
-      this.rotateCard();
-    }, false);
+    if (checkMobile()) {
+      if (checkIOS()) {
+        DeviceOrientationEvent.requestPermission()
+          .then(() => {
+            this.addDeviceOrientationEvent();
+          }).catch((e) => {
+            console.log(e);
+        });
+      } else {
+        this.addDeviceOrientationEvent();
+      }
+    } else {
+      window.addEventListener("mousemove", (e) => {
+        this.mouseX = e.clientX - (window.innerWidth / 2);
+        this.mouseY = e.clientY - (window.innerHeight / 2);
+      }, false);
+    }
+  }
+
+  this.addDeviceOrientationEvent = () => {
+    window.addEventListener("deviceorientation", (e) => {
+      this.mouseX = e.gamma;
+      this.mouseY = e.beta;
+    });
   }
 
   this.rotateCard = () => {
-    this.$card.style.transform = `translate(-50%, -48%) rotateZ(${(this.mouseX + this.mouseY) / 100}deg) rotateY(${this.mouseX / 100}deg) rotateX(${-this.mouseY / 100}deg) ${window.innerWidth < 768 ? 'scale(0.14)' : 'scale(0.3)'}`;
+    this.cardX += (this.mouseX - this.cardX) * 0.1;
+    this.cardY += (this.mouseY - this.cardY) * 0.1;
+
+    if (checkMobile()) {
+      this.$card.style.transform = `translate(-50%, -48%) rotateZ(${(this.cardX + this.cardY) / 60}deg) rotateY(${-(this.cardX + 50) / 50}deg) rotateX(${-(this.cardY + 90) / 60}deg) ${window.innerWidth < 768 ? 'scale(0.2)' : 'scale(0.3)'}`;
+    } else {
+      this.$card.style.transform = `translate(-50%, -48%) rotateZ(${(this.cardX + this.cardY) / 100}deg) rotateY(${this.cardX / 120}deg) rotateX(${-this.cardY / 80}deg) ${window.innerWidth < 768 ? 'scale(0.2)' : 'scale(0.3)'}`;
+    }
+    window.requestAnimationFrame(this.rotateCard);
   }
 
   this.setState = (nextState) => {
@@ -56,4 +87,5 @@ export default function App($app) {
   }
 
   this.mouseInteractive();
+  this.rotateCard();
 };
