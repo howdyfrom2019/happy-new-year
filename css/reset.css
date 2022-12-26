@@ -103,6 +103,10 @@ template {
     display: none;
 }
 
+p, a, h1, h2, h3, h4, h5, h6, ul, li, tr, td, input, select, textarea, button, figure, blockquote{
+    transform: skew(-0.1deg);
+}
+
 /* Links
      ========================================================================== */
 
