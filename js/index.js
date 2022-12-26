@@ -1,3 +1,3 @@
 import App from "./App";
-
-new App(document.querySelector(".App"));
+console.log(document.getElementById('app'));
+new App(document.getElementById("app"));

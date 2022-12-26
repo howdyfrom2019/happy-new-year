@@ -1,3 +1,74 @@
+@font-face {
+  font-family: "Destine", "Roboto Light", arial;
+  src: url("/fonts/DestinePersonalUseRegular.otf") format("opentype"), url("/fonts/DestinePersonalUseRegular.woff") format("woff"), url("/fonts/DestinePersonalUseRegular.woff2") format("woff2");
+}
+body {
+  --green: #2b5157;
+  --dark-green: #172e3a;
+  --white: #ecece8;
+}
 
+.card {
+  position: absolute;
+  top: 51vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  perspective: 800px;
+  visibility: hidden;
+  opacity: 0;
+}
+.card .active {
+  visibility: visible;
+  opacity: 1;
+}
+.card .upper {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  background: var(--white);
+  transform: rotate(-10deg);
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  border-radius: 5px 5px 0 0;
+}
+.card .upper .sun {
+  position: absolute;
+}
+.card .upper .mountain1 {
+  position: absolute;
+}
+.card .upper .mountain2 {
+  position: absolute;
+}
+.card .upper .rabbit {
+  position: absolute;
+}
+.card .upper .rock {
+  position: absolute;
+}
+.card .upper .celebration {
+  position: absolute;
+}
+.card .lower {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(180deg, var(--white), white);
+  border-radius: 0 0 5px 5px;
+  padding: 0 4vw;
+  transform: rotate(70deg);
+}
+.card .lower .msg {
+  width: 100%;
+  font-family: "Roboto Light", arial, serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.02em;
+  padding: 16px;
+  border-bottom: 1px solid black;
+}
 
 /*# sourceMappingURL=styles.css.map */
