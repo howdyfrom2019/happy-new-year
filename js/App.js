@@ -2,6 +2,7 @@ import UpperCard from "./UpperCard.js";
 import DownCard from "./DownCard.js";
 import Snow from "./Snow.js";
 import checkMobile from "./checkMobile.js";
+import checkIOS from "./checkIOS.js";
 
 export default function App($app) {
   this.$card =  document.createElement("div");
@@ -39,16 +40,29 @@ export default function App($app) {
 
   this.mouseInteractive = () => {
     if (checkMobile()) {
-      window.addEventListener("deviceorientation", (e) => {
-        this.mouseX = e.gamma;
-        this.mouseY = e.beta;
-      });
+      if (checkIOS()) {
+        DeviceOrientationEvent.requestPermission()
+          .then(() => {
+            this.addDeviceOrientationEvent();
+          }).catch((e) => {
+            console.log(e);
+        });
+      } else {
+        this.addDeviceOrientationEvent();
+      }
     } else {
       window.addEventListener("mousemove", (e) => {
         this.mouseX = e.clientX - (window.innerWidth / 2);
         this.mouseY = e.clientY - (window.innerHeight / 2);
       }, false);
     }
+  }
+
+  this.addDeviceOrientationEvent = () => {
+    window.addEventListener("deviceorientation", (e) => {
+      this.mouseX = e.gamma;
+      this.mouseY = e.beta;
+    });
   }
 
   this.rotateCard = () => {
