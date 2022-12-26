@@ -1,9 +1,9 @@
-import celebration from "../assets/celebration.png";
-import mountain1 from "../assets/mountain1.png";
-import mountain2 from "../assets/mountain2.png";
-import rabbit from "../assets/rabbit.png";
-import rock from "../assets/rock.png";
-import sun from "../assets/sun.png";
+const celebration = new Image().src = "../assets/celebration.png";
+const mountain1 = new Image().src = "../assets/mountain1.png";
+const mountain2 = new Image().src = "../assets/mountain2.png";
+const rabbit = new Image().src = "../assets/rabbit.png";
+const rock = new Image().src = "../assets/rock.png";
+const sun = new Image().src = "../assets/sun.png";
 
 export default function UpperCard({ $app, initialState, onClick }) {
   this.state = initialState;
@@ -18,7 +18,9 @@ export default function UpperCard({ $app, initialState, onClick }) {
   }
 
   this.render = () => {
+    this.$target.style.animationName = this.state ? "open" : "close";
     this.$target.innerHTML = `
+      <span class="font-roboto cover">2023년 연하장 To 당신!</span>
       <img class="sun" src=${sun} alt="sun" />
       <img class="mountain1" src=${mountain1} alt="mountain1" />
       <img class="mountain2" src=${mountain2} alt="mountain2" />

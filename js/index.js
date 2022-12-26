@@ -1,3 +1,3 @@
-import App from "./App";
-console.log(document.getElementById('app'));
+import App from "./App.js";
+
 new App(document.getElementById("app"));

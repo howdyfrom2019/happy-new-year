@@ -1,10 +1,26 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
+@font-face {
+    font-family: 'Destine';
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/DestinePersonalUseRegular.otf")format("opentype"),
+    url("/fonts/DestinePersonalUseRegular.woff")format("woff"),
+    url("/fonts/DestinePersonalUseRegular.woff2")format("woff2");
+}
+
+.font-roboto {
+    font-family: 'Destine', "Roboto Light", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 42px;
+    letter-spacing: 0.02em;
+    font-size: 36px;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 html {
     font-family: sans-serif;
@@ -13,6 +29,9 @@ html {
     /* 2 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
+    --green: #2b5157;
+    --dark_green: #172e3a;
+    --bg-white: #ecece8;
 }
 
 /**
